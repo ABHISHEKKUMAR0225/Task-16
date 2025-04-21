@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<h1>Basic Information Form</h1>
+<form id="myForm">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name"><br><br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"><br><br>
+<label for="phone">Phone:</label>
+<input type="number" id="phone" name="phone"><br><br>
+<input type="button" value="Submit" onclick="displayInfo()">
+</form>
+<div id="displayInfo"></div>
+
+<script>
+function displayInfo() {
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let phone = document.getElementById("phone").value;
+
+let displayDiv = document.getElementById("displayInfo");
+displayDiv.innerHTML = "Name: " + name + "<br>Email: " + email + "<br>Phone: " + phone;
+}
+</script>
+</body>
+</html>
+<br><br>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<h1>Change Image</h1>
+<img id="myImage" src="virat.jpg" width="330" height="400">
+<button onclick="changeImage()">Change Image</button>
+
+<script>
+function changeImage() {
+let image = document.getElementById("myImage");
+if (image.src.includes("virat.jpg")) {
+image.src = "virat1.jpg";
+} 
+else {
+image.src = "virat.jpg";
+}
+}
+</script>
+</body>
+</html>
+<br><br>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+<style>
+#myText {font-size: 16px;
+        }
+</style>
+</head>
+<body>
+<h1>Font Size</h1>
+<p id="myText">This is a sample text.</p>
+<button onclick="increaseFontSize()">Increase Font Size</button>
+<button onclick="decreaseFontSize()">Decrease Font Size</button>
+
+<script>
+let fontSize = 16;
+function increaseFontSize() {
+fontSize += 2;
+document.getElementById("myText").style.fontSize = fontSize + "px";
+}
+
+function decreaseFontSize() {
+fontSize -= 2;
+if (fontSize < 8) {
+fontSize = 8;
+}
+document.getElementById("myText").style.fontSize = fontSize + "px";
+}
+</script>
+</body>
+</html>
+<br><br>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<h1>Current Date and Time</h1>
+<p id="currentDateTime"></p>
+
+<script>
+function displayCurrentDateTime() {
+let currentDate = new Date();
+let dateTimeString = currentDate.toLocaleDateString() + " " + currentDate.toLocaleTimeString();
+document.getElementById("currentDateTime").innerHTML = dateTimeString;
+}
+
+displayCurrentDateTime();
+setInterval(displayCurrentDateTime, 1000);
+</script>
+</body>
+</html>
